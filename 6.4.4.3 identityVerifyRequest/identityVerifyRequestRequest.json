@@ -1,0 +1,79 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/identityVerifyRequestRequest.schema.json",
+    "title": "identityVerifyRequestRequest",
+    "description": "identityVerifyRequest request",
+    "type": "object"
+    "properties":{
+		"appHeader": {
+			"description": "identityVerifyRequest request header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api發送單位",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api接收單位",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息日期時間",
+					"type": "string"
+				}
+			},
+			"required":["appSourceID","appDestID","appUID","appDateTime"]
+		},
+		"appRepBody":{
+			"description": "identityVerifyRequest request body",
+			"type": "object",
+			"properties":{
+				"terminalID":{
+					"description": "端末代號",
+					"type": "string"
+				},
+				"icTxnNum":{
+					"description": "IC卡交易序號",
+					"type": "string"
+				},
+				"tmlCheckNumber":{
+					"description": "端末設備查核碼",
+					"type": "string"
+				},
+				"txnDateTime":{
+					"description": "端末交易日期時間",
+					"type": "string"
+				},
+				"terminalType":{
+					"description": "端末設備型態",
+					"type": "string"
+				},
+				"cardNumber":{
+					"description": "卡(帳)號",
+					"type": "string"
+				},
+				"icCardAdx":{
+					"description": "IC卡交易備註欄",
+					"type": "string"
+				},
+				"tac":{
+					"description": "交易驗證碼",
+					"type": "string"
+				},
+				"appCiphertext":{
+					"description": "(appCiphertext)",
+					"type": "string"
+				},
+				"verifyMemo":{
+					"description": "核驗附言欄",
+					"type": "string"
+				}
+			},
+			"required":["terminalID","tmlCheckNumber","txnDateTime","terminalType","cardNumber","appCiphertext","verifyMemo"]
+		}
+    }
+}

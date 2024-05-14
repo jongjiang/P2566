@@ -1,0 +1,123 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/checkQRCodeResponse.schema.json",
+    "title": "checkQRCodeResponse",
+    "description": "checkQRCode response",
+    "type": "object"
+    "properties":{
+		"appHeader": {
+			"description": "checkQRCode response header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api發送單位",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api接收單位",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息日期時間",
+					"type": "string"
+				}
+			},
+			"required":["appSourceID","appDestID","appUID","appDateTime"]
+		},
+		"appRepBody":{
+			"description": "checkQRCode response body",
+			"type": "object",
+			"properties":{
+				"qrCodeType":{
+					"description": "QR CODE交易型態",
+					"type": "string"
+				},
+				"txnAmount":{
+					"description": "交易金額",
+					"type": "number"
+				},
+				"txnCurrencyCode":{
+					"description": "交易金額幣別",
+					"type": "integer"
+				},
+				"countryCode":{
+					"description": "國別碼",
+					"type": "integer"
+				},
+				"acqID":{
+					"description": "收單行代號",
+					"type": "string"
+				},
+				"acqInfo":{
+					"description": "收單行資訊",
+					"type": "string"
+				},
+				"terminalID":{
+					"description": "端末代號",
+					"type": "string"
+				},
+				"merchantID":{
+					"description": "特店代號",
+					"type": "string"
+				},
+				"decryptedData":{
+					"description": "解密資料",
+					"type": "string"
+				},
+				"onlineNoticeNumber":{
+					"description": "繳費(臨櫃繳款)-臨櫃銷帳編號",
+					"type": "string"
+				},
+				"onlineDeadline":{
+					"description": "繳費(臨櫃繳款)-臨櫃繳納期限",
+					"type": "string"
+				},
+				"onlineTxnAmount":{
+					"description": "繳費(臨櫃繳款)-臨櫃交易金額",
+					"type": "number"
+				},
+				"paymentTypeAndHc":{
+					"description": "繳費支付工具類型及手續費",
+					"type": "string"
+				},
+				"sessionID":{
+					"description": "繳費SessionID",
+					"type": "string"
+				},
+				"feeType":{
+					"description": "繳費(查繳銷)-費用類別",
+					"type": "string"
+				},
+				"replyNoticeNumber":{
+					"description": "繳費(查繳銷)-銷帳編號",
+					"type": "string"
+				},
+				"replyTxnAmount":{
+					"description": "繳費(查繳銷)-待繳金額",
+					"type": "string"
+				},
+				"meterreadingDate":{
+					"description": "繳費(查繳銷)-抄表日期",
+					"type": "string"
+				},
+				"paymentDealLine":{
+					"description": "繳費(查繳銷)-繳費期限",
+					"type": "string"
+				},
+				"responseCode":{
+					"description": "交易回應代碼",
+					"type": "string"
+				},
+				"responseDesc":{
+					"description": "交易回應敘述",
+					"type": "string"
+				}
+			},
+			"required":["qrCodeType","txnAmount","responseCode","responseDesc"]
+		}
+    }
+}
