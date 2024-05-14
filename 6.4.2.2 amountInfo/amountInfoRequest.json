@@ -6,7 +6,7 @@
     "type": "object"
     "properties":{
 		"appHeader": {
-			"description": "apCheckOut request header",
+			"description": "amountInfo request header",
 			"type": "object",
 			"properties":{
 				"appSourceID":{

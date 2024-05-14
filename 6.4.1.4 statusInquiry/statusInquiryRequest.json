@@ -6,7 +6,7 @@
     "type": "object"
     "properties":{
 		"appHeader": {
-			"description": "apCheckOut request header",
+			"description": "statusInquiry request header",
 			"type": "object",
 			"properties":{
 				"appSourceID":{

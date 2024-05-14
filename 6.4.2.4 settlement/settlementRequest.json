@@ -1,12 +1,12 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/warningMsgRequest.schema.json",
-    "title": "warningMsgRequest",
-    "description": "warningMsg request",
+    "$id": "https://example.com/settlementRequest.schema.json",
+    "title": "settlementRequest",
+    "description": "settlement request",
     "type": "object"
     "properties":{
 		"appHeader": {
-			"description": "apCheckOut request header",
+			"description": "settlement request header",
 			"type": "object",
 			"properties":{
 				"appSourceID":{
@@ -29,7 +29,7 @@
 			"required":["appSourceID","appDestID","appUID","appDateTime"]
 		},
 		"appRepBody":{
-			"description": "warningMsg request body",
+			"description": "settlement request body",
 			"type": "object",
 			"properties":{
 				"reserveAmount":{

@@ -1,12 +1,12 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/warningMsgResponse.schema.json",
-    "title": "warningMsgResponse",
-    "description": "warningMsg response",
+    "$id": "https://example.com/settlementResponse.schema.json",
+    "title": "settlementResponse",
+    "description": "settlement response",
     "type": "object"
     "properties":{
 		"appHeader": {
-			"description": "warningMsg response header",
+			"description": "settlement response header",
 			"type": "object",
 			"properties":{
 				"appSourceID":{
@@ -29,7 +29,7 @@
 			"required":["appSourceID","appDestID","appUID","appDateTime"]
 		},
 		"appRepBody":{
-			"description": "warningMsg response body",
+			"description": "settlement response body",
 			"type": "object",
 			"properties":{
 				"responseCode":{
