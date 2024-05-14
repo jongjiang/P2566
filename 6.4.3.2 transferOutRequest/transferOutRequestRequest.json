@@ -1,0 +1,71 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/transferOutRequestRequest.schema.json",
+    "title": "transferOutRequestRequest",
+    "description": "transferOutRequest request",
+    "type": "object"
+    "properties":{
+		"appHeader": {
+			"description": "transferOutRequest request header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api發送單位",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api接收單位",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息日期時間",
+					"type": "string"
+				}
+			},
+			"required":["appSourceID","appDestID","appUID","appDateTime"]
+		},
+		"appRepBody":{
+			"description": "transferOutRequest request body",
+			"type": "object",
+			"properties":{
+				"txnAmount":{
+					"description": "交易金額",
+					"type": "number"
+				},
+				"txnCurrencyCode":{
+					"description": "交易金額幣別",
+					"type": "integer"
+				},
+				"transfereeID":{
+					"description": "轉入參加單位代號",
+					"type": "string"
+				},
+				"transferorID":{
+					"description": "轉出參加單位代號",
+					"type": "string"
+				},	
+				"terminalType":{
+					"description": "端末設備型態",
+					"type": "string"
+				},
+				"txnMemo":{
+					"description": "轉帳附言欄",
+					"type": "string"
+				},
+				"transfereeAccount":{
+					"description": "轉入帳號",
+					"type": "string"
+				},
+				"transferorAccount":{
+					"description": "轉出帳號",
+					"type": "string"
+				}				
+			},
+			"required":["txnAmount","transfereeID","transferorID","terminalType","transfereeAccount","transferorAccount"]
+		}
+    }
+}

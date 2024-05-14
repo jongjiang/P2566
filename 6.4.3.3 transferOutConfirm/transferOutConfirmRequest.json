@@ -1,0 +1,63 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/transferOutConfirmRequest.schema.json",
+    "title": "transferOutConfirmRequest",
+    "description": "transferOutConfirm request",
+    "type": "object"
+    "properties":{
+		"appHeader": {
+			"description": "transferOutConfirm request header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api發送單位",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api接收單位",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息日期時間",
+					"type": "string"
+				},
+				"appResend":{
+					"description": "註記此訊息為重送訊息",
+					"type": "string"
+				}
+			},
+			"required":["appSourceID","appDestID","appUID","appDateTime"]
+		},
+		"appRepBody":{
+			"description": "transferOutConfirm request body",
+			"type": "object",
+			"properties":{
+				"originalAppDateTime":{
+					"description": "原交易訊息日期時間",
+					"type": "string"
+				},
+				"busDate":{
+					"description": "跨行營業日",
+					"type": "string"
+				},
+				"accountInfo":{
+					"description": "轉入帳戶補充資訊",
+					"type": "string"
+				},
+				"fiscSTAN":{
+					"description": "財金跨行序號",
+					"type": "string"
+				},
+				"fiscRC":{
+					"description": "財金跨行回應代碼",
+					"type": "string"
+				}				
+			},
+			"required":["originalAppDateTime","busDate"]
+		}
+    }
+}
