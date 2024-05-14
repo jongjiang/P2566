@@ -1,0 +1,47 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/statusInquiryResponse.schema.json",
+    "title": "statusInquiryResponse",
+    "description": "statusInquiry response",
+    "type": "object"
+    "properties":{
+		"appHeader": {
+			"description": "statusInquiry response header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api發送單位",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api接收單位",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息日期時間",
+					"type": "string"
+				}
+			},
+			"required":["appSourceID","appDestID","appUID","appDateTime"]
+		},
+		"appRepBody":{
+			"description": "statusInquiry response body",
+			"type": "object",
+			"properties":{
+				"acotStatus":{
+					"description": "財金應用系統狀態",
+					"type": "string"
+				},
+				"coctStatus":{
+					"description": "參加單位系統狀態",
+					"type": "string"
+				}
+			},
+			"required":["acotStatus","coctStatus"]
+		}
+    }
+}
