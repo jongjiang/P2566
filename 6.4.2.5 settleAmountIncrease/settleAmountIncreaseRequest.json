@@ -1,0 +1,55 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/settleAmountIncreaseRequest.schema.json",
+    "title": "settleAmountIncreaseRequest",
+    "description": "settleAmountIncrease request",
+    "type": "object"
+    "properties":{
+		"appHeader": {
+			"description": "apCheckOut request header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api發送單位",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api接收單位",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息日期時間",
+					"type": "string"
+				},
+				"appResend":{
+					"description": "註記此訊息為重送訊息",
+					"type": "string"
+				}
+			},
+			"required":["appSourceID","appDestID","appUID","appDateTime"]
+		},
+		"appRepBody":{
+			"description": "settleAmountIncrease request body",
+			"type": "object",
+			"properties":{
+				"settleAmount":{
+					"description": "跨行業務基金撥轉金額",
+					"type": "number"
+				},
+				"fiscSTAN":{
+					"description": "財金跨行序號",
+					"type": "string"
+				},
+				"fiscRC":{
+					"description": "財金跨行回應代碼",
+					"type": "string"
+				}
+			},
+			"required":["settleAmount","fiscSTAN","fiscRC"]
+		}
+    }
+}

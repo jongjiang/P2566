@@ -1,0 +1,43 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/statusInquiryRequest.schema.json",
+    "title": "statusInquiryRequest",
+    "description": "statusInquiry request",
+    "type": "object"
+    "properties":{
+		"appHeader": {
+			"description": "apCheckOut request header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api發送單位",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api接收單位",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息日期時間",
+					"type": "string"
+				}
+			},
+			"required":["appSourceID","appDestID","appUID","appDateTime"]
+		},
+		"appRepBody":{
+			"description": "statusInquiry request body",
+			"type": "object",
+			"properties":{
+				"memberID":{
+					"description": "電支機構代碼",
+					"type": "integer"
+				}
+			},
+			"required":["memberID"]
+		}
+    }
+}

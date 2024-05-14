@@ -1,0 +1,59 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/warningMsgRequest.schema.json",
+    "title": "warningMsgRequest",
+    "description": "warningMsg request",
+    "type": "object"
+    "properties":{
+		"appHeader": {
+			"description": "apCheckOut request header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api發送單位",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api接收單位",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息日期時間",
+					"type": "string"
+				}
+			},
+			"required":["appSourceID","appDestID","appUID","appDateTime"]
+		},
+		"appRepBody":{
+			"description": "warningMsg request body",
+			"type": "object",
+			"properties":{
+				"reserveAmount":{
+					"description": "跨行預留基金",
+					"type": "integer"
+				},
+				"lowLimit":{
+					"description": "跨行業務基金低限",
+					"type": "integer"
+				},
+				"availableBalace":{
+					"description": "跨行業務基金可用餘額",
+					"type": "number"
+				},
+				"fiscSTAN":{
+					"description": "財金跨行序號",
+					"type": "string"
+				},
+				"fiscRC":{
+					"description": "財金跨行回應代碼",
+					"type": "string"
+				}
+			},
+			"required":["reserveAmount","lowLimit","availableBalace","fiscSTAN","fiscRC"]
+		}
+    }
+}
