@@ -10,11 +10,11 @@
 			"type": "object",
 			"properties":{
 				"appSourceID":{
-					"description": "api發送單位",
+					"description": "api發送單位ID",
 					"type": "integer"
 				},
 				"appDestID":{
-					"description": "api接收單位",
+					"description": "api接收單位ID",
 					"type": "integer"
 				},
 				"appUID":{
