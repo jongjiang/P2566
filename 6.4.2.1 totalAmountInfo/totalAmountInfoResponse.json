@@ -36,9 +36,13 @@
 					"description": "帳務詳細資料",
 					"type": "object",
 					"properties":{
+						"totalAmtDB":{
+							"description": "合計應收金額",
+							"type": "string"
+						},
 						"totalAmtCR":{
-						"description": "合計應付金額",
-						"type": "string"
+							"description": "合計應付金額",
+							"type": "string"
 						},
 						"atmCntDB":{
 							"description": "CD/ATM應收筆數",
