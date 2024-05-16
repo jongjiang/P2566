@@ -1,0 +1,69 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/rcvIdentityVerifyConfirmRequest.schema.json",
+	"title": "rcvIdentityVerifyConfirmRequest",
+	"description": "rcvIdentityVerifyConfirm request",
+	"type": "object",
+	"properties":{
+		"appHeader": {
+			"description": "appHeader request header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api 發起端ID",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api 接收端ID",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息傳輸時間",
+					"type": "string"
+				},
+				"appResend":{
+					"description": "註記此訊息為重送訊息",
+					"type": "object"
+				},
+				"required":["appSourceID","appDestID","appUID","appDateTime"]
+			},
+		},
+		"appReqBody":{
+			"description": "rcvIdentityVerifyConfirm request body",
+			"type": "object",
+			"properties":{
+				"originalAppUID":{
+					"description": "原交易訊息UID",
+					"type": "string"
+				},
+				"originalAppDateTime":{
+					"description": "原交易訊息日期時間",
+					"type": "string"
+				},
+				"fiscSTAN":{
+					"description": "財金跨行序號",
+					"type": "string"
+				},
+				"fiscRC":{
+					"description": "財金跨行回應代碼",
+					"type": "string"
+				},
+				"appCiphertext":{
+					"description": "(appCiphertext)",
+					"type": "object"
+					"properties":{
+						"verifyMemo":{
+							"description": "核驗附言欄",
+							"type": "string"
+						}
+					}
+				}
+			},
+			"required":["originalAppUID","originalAppDateTime"]
+		}
+	}
+}

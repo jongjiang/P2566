@@ -1,0 +1,62 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/decryptDataResponse.schema.json",
+	"title": "decryptDataResponse",
+	"description": "decryptData response",
+	"type": "object",
+	"properties":{
+		"appHeader": {
+			"description": "appHeader response header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api 發起端ID",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api 接收端ID",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息傳輸時間",
+					"type": "string"
+				},
+			},
+			"required":["appSourceID","appDestID","appUID","appDateTime"]
+		},
+		"appRepBody":{
+			"description": "decryptData response body",
+			"type": "object",
+			"properties":{
+				"acqID":{
+					"description": "收單行代號",
+					"type": "string"
+				},
+				"terminalID":{
+					"description": "端末代號",
+					"type": "string"
+				},
+				"merchantID":{
+					"description": "特店代號",
+					"type": "string"
+				},
+				"decryptedData":{
+					"description": "解密資料",
+					"type": "string"
+				},
+				"responseCode":{
+					"description": "交易回應代碼",
+					"type": "string"
+				},
+				"responseDesc":{
+					"description": "交易回應敘述",
+					"type": "string"
+				},
+			}
+		}
+	}
+}

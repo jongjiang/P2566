@@ -1,0 +1,55 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/decryptDataRequest.schema.json",
+	"title": "decryptDataRequest",
+	"description": "decryptData request",
+	"type": "object",
+	"properties":{
+		"appHeader": {
+			"description": "appHeader request header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api 發起端ID",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api 接收端ID",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息傳輸時間",
+					"type": "string"
+				},
+				"required":["appSourceID","appDestID","appUID","appDateTime"]
+			},
+		},
+		"appReqBody":{
+			"description": "decryptData request body",
+			"type": "object",
+			"properties":{
+				"acqID":{
+					"description": "收單行代號",
+					"type": "string"
+				},
+				"terminalID":{
+					"description": "端末代號",
+					"type": "string"
+				},
+				"merchantID":{
+					"description": "特店代號",
+					"type": "string"
+				},
+				"encryptedData":{
+					"description": "QRCode密文資料 ",
+					"type": "string"
+				},
+			},
+			"required":["acqID","terminalID","merchantID","encryptedData"]
+		}
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/rcvIdentityVerifyConfirmResponse.schema.json",
+	"title": "rcvIdentityVerifyConfirmResponse",
+	"description": "rcvIdentityVerifyConfirm response",
+	"type": "object",
+	"properties":{
+		"appHeader": {
+			"description": "appHeader response header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api 發起端ID",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api 接收端ID",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息傳輸時間",
+					"type": "string"
+				},
+			},
+			"required":["appSourceID","appDestID","appUID","appDateTime"]
+		},
+		"appRepBody":{
+			"description": "rcvIdentityVerifyConfirm response body",
+			"type": "object",
+			"properties":{
+				"responseCode":{
+					"description": "交易回應代碼",
+					"type": "string"
+				},
+				"responseDesc":{
+					"description": "交易回應敘述",
+					"type": "string"
+				},
+			}
+		}
+	}
+}

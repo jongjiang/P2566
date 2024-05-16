@@ -1,20 +1,20 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/identityVerifyRequestRequest.schema.json",
-    "title": "identityVerifyRequestRequest",
-    "description": "identityVerifyRequest request",
-    "type": "object"
-    "properties":{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/rcvIdentityVerifyRequestRequest.schema.json",
+	"title": "rcvIdentityVerifyRequestRequest",
+	"description": "rcvIdentityVerifyRequest request",
+	"type": "object",
+	"properties":{
 		"appHeader": {
-			"description": "identityVerifyRequest request header",
+			"description": "appHeader request header",
 			"type": "object",
 			"properties":{
 				"appSourceID":{
-					"description": "api發送單位ID",
+					"description": "api 發起端ID",
 					"type": "integer"
 				},
 				"appDestID":{
-					"description": "api接收單位ID",
+					"description": "api 接收端ID",
 					"type": "integer"
 				},
 				"appUID":{
@@ -22,14 +22,14 @@
 					"type": "string"
 				},
 				"appDateTime":{
-					"description": "訊息日期時間",
+					"description": "訊息傳輸時間",
 					"type": "string"
-				}
+				},
+				"required":["appSourceID","appDestID","appUID","appDateTime"]
 			},
-			"required":["appSourceID","appDestID","appUID","appDateTime"]
 		},
-		"appRepBody":{
-			"description": "identityVerifyRequest request body",
+		"appReqBody":{
+			"description": "rcvIdentityVerifyRequest request body",
 			"type": "object",
 			"properties":{
 				"terminalID":{
@@ -52,6 +52,14 @@
 					"description": "端末設備型態",
 					"type": "string"
 				},
+				"busDate":{
+					"description": "跨行營業日",
+					"type": "string"
+				},
+				"fiscSTAN":{
+					"description": "財金跨行序號",
+					"type": "string"
+				},
 				"cardNumber":{
 					"description": "卡(帳)號",
 					"type": "string"
@@ -66,16 +74,16 @@
 				},
 				"appCiphertext":{
 					"description": "(appCiphertext)",
-					"type": "object",
+					"type": "object"
 					"properties":{
 						"verifyMemo":{
 							"description": "核驗附言欄",
 							"type": "string"
 						}
 					}
-				}
+				}	
 			},
-			"required":["terminalID","tmlCheckNumber","txnDateTime","terminalType","cardNumber","appCiphertext","verifyMemo"]
+			"required":["terminalID","tmlCheckNumber","txnDateTime","terminalType","busDate","fiscSTAN","cardNumber","appCiphertext","verifyMemo"]
 		}
-    }
+	}
 }

@@ -1,0 +1,79 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/identityVerifyConfirmRequest.schema.json",
+	"title": "identityVerifyConfirmRequest",
+	"description": "identityVerifyConfirm request",
+	"type": "object",
+	"properties":{
+		"appHeader": {
+			"description": "appHeader request header",
+			"type": "object",
+			"properties":{
+				"appSourceID":{
+					"description": "api 發起端ID",
+					"type": "integer"
+				},
+				"appDestID":{
+					"description": "api 接收端ID",
+					"type": "integer"
+				},
+				"appUID":{
+					"description": "訊息UID",
+					"type": "string"
+				},
+				"appDateTime":{
+					"description": "訊息傳輸時間",
+					"type": "string"
+				},
+				"appResend":{
+					"description": "註記此訊息為重送訊息",
+					"type": "object"
+				},
+				"required":["appSourceID","appDestID","appUID","appDateTime"]
+			},
+		},
+		"appReqBody":{
+			"description": "identityVerifyConfirm request body",
+			"type": "object",
+			"properties":{
+				"originalAppUID":{
+					"description": "原交易訊息UID",
+					"type": "string"
+				},
+				"originalAppDateTime":{
+					"description": "原交易訊息日期時間",
+					"type": "string"
+				},
+				"terminalID":{
+					"description": "端末設備代號",
+					"type": "string"
+				},
+				"handlerCharge":{
+					"description": "跨行手續費",
+					"type": "string"
+				},
+				"busDate":{
+					"description": "跨行營業日",
+					"type": "string"
+				},
+				"fiscSTAN":{
+					"description": "財金跨行序號",
+					"type": "string"
+				},
+				"fiscRC":{
+					"description": "財金跨行回應代碼",
+					"type": "string"
+				},
+				"appCiphertext":{
+					"description": "",
+					"type": "string"
+				},
+				"verifyMemo":{
+					"description": "核驗附言欄",
+					"type": "string"
+				},
+			},
+			"required":["originalAppUID","originalAppDateTime","terminalID"]
+		}
+	}
+}
