@@ -26,20 +26,20 @@
 				"appResend": {
 					"description": "註記此訊息為重送訊息",
 					"type": "string"
-				},
-				"required":["appSourceID","appDestID","appUID","appDateTime"]
+				}
 			},
-			"appReqBody": {
-				"description": "",
-				"type": "object",
-				"properties": {
-					"memberID": {
-						"description": "電支機構代碼",
-						"type": "string"
-					}
-				},
-				"required":["memberID"]
-			}
+			"required":["appSourceID","appDestID","appUID","appDateTime"]
+		},
+		"appReqBody": {
+			"description": "",
+			"type": "object",
+			"properties": {
+				"memberID": {
+					"description": "電支機構代碼",
+					"type": "string"
+				}
+			},
+			"required":["memberID"]
 		}
 	}
 }
