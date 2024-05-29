@@ -1,43 +1,45 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/statusInquiryRequest.schema.json",
-    "title": "statusInquiryRequest",
-    "description": "statusInquiry request",
-    "type": "object"
-    "properties":{
+	"$schema": "https:\\json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/memberNoticeRequest.schema.json",
+	"title": "totalAmountInfo",
+	"properties": {
 		"appHeader": {
-			"description": "statusInquiry request header",
+			"description": "api訊息表頭",
 			"type": "object",
-			"properties":{
-				"appSourceID":{
+			"properties": {
+				"appSourceID": {
 					"description": "api發送單位ID",
 					"type": "integer"
 				},
-				"appDestID":{
+				"appDestID": {
 					"description": "api接收單位ID",
 					"type": "integer"
 				},
-				"appUID":{
+				"appUID": {
 					"description": "訊息UID",
 					"type": "string"
 				},
-				"appDateTime":{
+				"appDateTime": {
 					"description": "訊息日期時間",
 					"type": "string"
-				}
+				},
+				"appResend": {
+					"description": "註記此訊息為重送訊息",
+					"type": "string"
+				},
+				"required":["appSourceID","appDestID","appUID","appDateTime"]
 			},
-			"required":["appSourceID","appDestID","appUID","appDateTime"]
-		},
-		"appRepBody":{
-			"description": "statusInquiry request body",
-			"type": "object",
-			"properties":{
-				"memberID":{
-					"description": "電支機構代碼",
-					"type": "integer"
-				}
-			},
-			"required":["memberID"]
+			"appReqBody": {
+				"description": "",
+				"type": "object",
+				"properties": {
+					"memberID": {
+						"description": "電支機構代碼",
+						"type": "string"
+					}
+				},
+				"required":["memberID"]
+			}
 		}
-    }
+	}
 }
